@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=WDXL+Lubrifont+JP+N&display=swap');
 @import "tailwindcss";
 
+/* デザイン変数の定義 */
 @theme inline {
   /* 背景色 */
   --color-main: #8f8b8a;
@@ -9,21 +11,40 @@
   --color-main-text: #e5e2de;
   --color-sub-text: #FFFFFF;
   --color-accent-text: #666666;
-
+  /* フォントの追加 */
+  --font-main: "WDXL Lubrifont JP N", sans-serif;
+  --font-display: "WDXL Lubrifont JP N", sans-serif;
 }
 
 
-
+/* 標準タグのスタイル設定 */
 @layer base {
-    body {
+
+  /* 全共通 */
+  body {
   
     @apply bg-main text-main-text;
+    @apply font-main;
     @apply antialiased min-h-screen;/* 文字を読みやすくする設定 */
-    /* フォントの設定（Next.js標準のGeistを使用する場合） */
-    font-family: var(--font-geist-sans), sans-serif;
+
   }
 
+  /* 大枠 */
+ header {
+    @apply bg-sub/80 text-sub-text backdrop-blur-md; /* 背景を透過＋ぼかし */
+    @apply sticky top-0 z-50 w-full; /* 常に上に固定＋最前面＋最大領域 */
+    
+  }
+  main {
+    @apply max-w-5xl mx-auto px-6 py-12;/* 左右の余白と最大幅 */
+    
+  }
+  footer {
+    @apply bg-sub text-sub-text; /* 背景＋文字 */
+    @apply py-8 text-center; /* パディング＋中央寄せ */
+  }
 
+    /* 小枠 */
   h1 {
     @apply text-3xl font-bold text-main-text;
   }
@@ -31,4 +52,13 @@
     @apply leading-relaxed text-main-text;
   }
 
+
+
+}
+
+/* 独自のユーティリティ作成 */
+@layer utilities {
+  .flex-center {
+    @apply flex items-center justify-center;
+  }
 }

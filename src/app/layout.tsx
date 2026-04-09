@@ -27,13 +27,17 @@ export default function RootLayout({
     <html lang="ja">
       <body>
 
-        <Navbar />
-        
+        <header>
+          ヘッダー
+          <Navbar />
+        </header>
+
         <main>
           {children}
         </main>
         
-        <footer className="text-center">
+        <footer>
+          フッター
           © 2026 miho inc.
         </footer>
 
