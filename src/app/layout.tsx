@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar"; // 作ったコンポーネントをインポート
+import Header from "@/components/Header";
+import Navbar from "@/components/Navbar";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,10 +29,9 @@ export default function RootLayout({
     <html lang="ja">
       <body>
 
-        <header>
-          ヘッダー
-          <Navbar />
-        </header>
+        <Header />
+
+        <Navbar />
 
         <main>
           {children}

@@ -31,9 +31,10 @@
 
   /* 大枠 */
  header {
-    @apply bg-sub/80 text-sub-text backdrop-blur-md; /* 背景を透過＋ぼかし */
-    @apply sticky top-0 z-50 w-full; /* 常に上に固定＋最前面＋最大領域 */
+    @apply bg-sub text-sub-text; /* 背景＋文字 */
     
+    @apply sticky top-0 z-50 w-full; /* 常に上に固定＋最前面＋最大領域 */
+    @apply px-4 py-4;
   }
   main {
     @apply max-w-5xl mx-auto px-6 py-12;/* 左右の余白と最大幅 */
@@ -41,7 +42,7 @@
   }
   footer {
     @apply bg-sub text-sub-text; /* 背景＋文字 */
-    @apply py-8 text-center; /* パディング＋中央寄せ */
+    @apply py-4 text-center; /* パディング＋中央寄せ */
   }
 
     /* 小枠 */
