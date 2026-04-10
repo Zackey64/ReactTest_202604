@@ -31,12 +31,19 @@
 
   /* 大枠 */
  header {
-    @apply bg-sub/80 text-sub-text backdrop-blur-md; /* 背景を透過＋ぼかし */
-    @apply sticky top-0 z-50 w-full; /* 常に上に固定＋最前面＋最大領域 */
+    @apply bg-sub text-sub-text; 
+    @apply z-50 w-full; /* 最前面＋最大領域 */
     
   }
+  nav{
+    @apply bg-main/75 text-sub-text backdrop-blur-md; 
+    @apply z-50 w-full; /* 最前面＋最大領域 */
+    @apply border-y-2 border-sub;
+  }
+
+  
   main {
-    @apply max-w-5xl mx-auto px-6 py-12;/* 左右の余白と最大幅 */
+    @apply max-w-4xl mx-auto px-6 py-12;/* 左右の余白と最大幅 */
     
   }
   footer {
