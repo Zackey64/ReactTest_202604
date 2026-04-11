@@ -1,6 +1,8 @@
 // src/components/Navbar.tsx
 import Link from "next/link";
 
+import {NavItem} from "@/components/NavItem";
+
 export default function Navbar() {
   return (
     <nav className="flex items-center justify-between p-4 bg-sub text-sub-text shadow-sm">
@@ -14,7 +16,11 @@ export default function Navbar() {
             <Link href="/test" className="hover:text-accent-text transition-colors">
             テスト
             </Link>
-      </div>
+
+            <NavItem label="アイテム1" href="/" icon="file.svg" />
+
+          
+        </div>
     </nav>
   );
 }

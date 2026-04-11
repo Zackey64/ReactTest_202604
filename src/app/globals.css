@@ -3,17 +3,18 @@
 
 /* デザイン変数の定義 */
 @theme inline {
+
   /* 背景色 */
-  --color-main: #8f8b8a;
-  --color-sub: #b0cab4;
-  --color-accent: #e5e2de;
+  --color-base  : #ffffff;
+  --color-main  : #333333;
+  --color-accent: #ff9900;
   /* 文字色 */
-  --color-main-text: #e5e2de;
-  --color-sub-text: #FFFFFF;
-  --color-accent-text: #666666;
+  --color-base-text  : #666666;
+  --color-main-text  : #ffffff;
+  --color-accent-text: #333333;
   /* フォントの追加 */
-  --font-main: "WDXL Lubrifont JP N", sans-serif;
-  --font-display: "WDXL Lubrifont JP N", sans-serif;
+  --font-base: "WDXL Lubrifont JP N", sans-serif;
+  --font-accent: "WDXL Lubrifont JP N", sans-serif;
 }
 
 
@@ -23,40 +24,40 @@
   /* 全共通 */
   body {
   
-    @apply bg-main text-main-text;
-    @apply font-main;
+    @apply bg-gray-500 text-base-text;
+    @apply font-base;
     @apply antialiased min-h-screen;/* 文字を読みやすくする設定 */
 
   }
 
   /* 大枠 */
  header {
-    @apply bg-sub text-sub-text; 
-    @apply z-50 w-full; /* 最前面＋最大領域 */
+    @apply bg-main text-main-text; 
+    @apply z-50 w-full px-8; /* 最前面＋最大領域 */
     
   }
-  nav{
-    @apply bg-main/75 text-sub-text backdrop-blur-md; 
-    @apply z-50 w-full; /* 最前面＋最大領域 */
-    @apply border-y-2 border-sub;
-  }
+  nav {
+    @apply bg-main text-main-text; 
+    @apply z-50 w-full px-8; /* 最前面＋最大領域 */
 
-  
+  }
   main {
-    @apply max-w-4xl mx-auto px-6 py-12;/* 左右の余白と最大幅 */
+    @apply bg-base text-base-text;
+    @apply max-w-5xl mx-auto px-6 py-12;/* 左右の余白と最大幅 */
     
   }
   footer {
-    @apply bg-sub text-sub-text; /* 背景＋文字 */
-    @apply py-8 text-center; /* パディング＋中央寄せ */
+    @apply bg-main text-main-text; 
+    @apply z-50 w-full p-8 text-center; /* パディング＋中央寄せ */
   }
 
     /* 小枠 */
   h1 {
-    @apply text-3xl font-bold text-main-text;
+    @apply text-3xl font-bold;
+    @apply py-2;
   }
   p {
-    @apply leading-relaxed text-main-text;
+    @apply leading-relaxed;
   }
 
 
