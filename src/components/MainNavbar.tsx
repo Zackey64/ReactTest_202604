@@ -13,8 +13,8 @@ export default function MainNavbar() {
 
         <NavItem label="ホーム" href="/" icon="file.svg" />
         <NavItem label="テスト" href="/test" icon="file.svg" />
-        <NavItem label="自分のプロフィール" href="/" icon="file.svg" />
-        <NavItem label="自分のプロフィール" href="/" icon="file.svg" />
+        <NavItem label="標準コンポーネント" href="/test2" icon="file.svg" />
+        <NavItem label="スタイルテスト" href="/StyleTest" icon="file.svg" />
         <NavItem label="自分のプロフィール" href="/" icon="file.svg" />
         <NavItem label="自分のプロフィール" href="/" icon="file.svg" />
 

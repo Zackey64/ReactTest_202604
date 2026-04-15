@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=WDXL+Lubrifont+JP+N&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+1+Code:wght@100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+1+Code:wght@100..700&family=WDXL+Lubrifont+JP+N&display=swap');
 @import "tailwindcss";
 
 /* デザイン変数の定義 */
@@ -13,7 +15,7 @@
   --color-main-text  : #ffffff;
   --color-accent-text: #333333;
   /* フォントの追加 */
-  --font-base: "WDXL Lubrifont JP N", sans-serif;
+  --font-base:  "M PLUS 1 Code", monospace;
   --font-accent: "WDXL Lubrifont JP N", sans-serif;
 }
 
