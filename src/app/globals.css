@@ -45,7 +45,7 @@
   }
   main {
     @apply bg-base text-base-text;
-    @apply max-w-5xl mx-auto px-6 py-12;/* 左右の余白と最大幅 */
+    @apply max-w-7xl mx-auto px-6 py-12;/* 左右の余白と最大幅 */
     
   }
   footer {

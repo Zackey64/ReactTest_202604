@@ -1,9 +1,19 @@
 
-
-import {S_Card} from "@/components/S_Card";
+import { S_Theme } from "@/components/S_Theme";
+import {S_Card, S_TitleCard} from "@/components/S_Card";
 import { S_Accordion, S_Summary, S_Details } from "@/components/S_Accordion";
+import { S_CodeView } from "@/components/S_CodeView";
 
 export default function TestPage() {
+
+
+  const sampleCode1 = `<div className="relative ...">
+  <div className="absolute right-4 bottom-4 ...">
+    ...
+  </div>
+</div>`;
+
+
   return (
     <div>
       <h1>スタイルテスト</h1>
@@ -117,96 +127,88 @@ export default function TestPage() {
 
 
       {/* 2 */}
-      <div className="p-4">
+      <div className="py-4">
 
         <h1 className="px-4 bg-main text-main-text border-b-4 border-accent">配置</h1>
 
         {/* 配置１ */}
-        <div className="p-4">
+        <div className="py-4">
 
-          <p className="px-2 font-bold border-l-8 border-accent">absolute（絶対位置）</p>
-          <p>
+          <S_Theme title="absolute（絶対位置）">
             absolute を指定した要素の位置は、top（上からの位置）や left（左からの位置）などで指定します。
             位置の基準は、親要素が relative であればその親要素が基準になりますが、static であれば画面全体になります。
-          </p>
+          </S_Theme>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-
-            <S_Card>
-              <S_Accordion>
+          <div className="flex flex-wrap gap-4">
+            
+            <S_Accordion>
+              <S_Card className="w-100">
                 <S_Summary>
-                  <div className="p-2">
-                    <div className="mb-2 border-b border-gray-200">
-                      無指定（左上起点）
-                    </div>
-                    <div className="flex justify-center items-center">
-                      <div className="relative border-2 border-dashed border-gray-300 w-30 h-30 ">
-                        <div className="absolute bg-gray-100 border-2 border-gray-300 px-1">
-                          要素
-                        </div>
+                  <div className="flex justify-center p-1 border-b border-gray-200 bg-gray-50">
+                    無指定
+                  </div>
+                  <div className="p-2 text-sm">
+                     無指定の場合、左上起点になります。
+                  </div>
+                  <div className="flex justify-center items-center p-2">
+                    <div className="relative border-2 border-dashed border-gray-300 w-30 h-30 ">
+                      <div className="absolute bg-gray-100 border-2 border-gray-300 px-1">
+                        要素
                       </div>
                     </div>
                   </div>
                 </S_Summary>
                 <S_Details>
-                  <div className="p-2 bg-gray-300">
-                    ...
-                  </div>
+                  <S_CodeView title="Tailwind CSS (.tsx)" code={sampleCode1} />
                 </S_Details>
-              </S_Accordion>
-            </S_Card>
+              </S_Card>
+            </S_Accordion>
 
-            <S_Card>
-              <S_Accordion>
+            <S_Accordion>
+              <S_Card className="w-100">
                 <S_Summary>
-                  <div className="p-2">
-                    <div className="mb-2 border-b border-gray-200">
-                      左上起点
-                    </div>
-                    <div className="flex justify-center items-center">
-                      <div className="relative border-2 border-dashed border-gray-300 w-30 h-30 ">
-                        <div className="absolute top-4 left-4 bg-gray-100 border-2 border-gray-300 px-1">
-                          要素
-                        </div>
+                  <div className="flex justify-center p-1 border-b border-gray-200 bg-gray-50">
+                    左上起点
+                  </div>
+                  <div className="p-2 text-sm">
+                    top と left を指定している為、左上起点になります。
+                  </div>
+                  <div className="flex justify-center items-center p-2">
+                    <div className="relative border-2 border-dashed border-gray-300 w-30 h-30 ">
+                      <div className="absolute top-4 left-4 bg-gray-100 border-2 border-gray-300 px-1">
+                        要素
                       </div>
                     </div>
                   </div>
                 </S_Summary>
                 <S_Details>
-                  <div className="p-2 bg-gray-300">
-                    ...
-                  </div>
+                  <S_CodeView title="Tailwind CSS (.tsx)" code={sampleCode1} />
                 </S_Details>
-              </S_Accordion>
-            </S_Card>
+              </S_Card>
+            </S_Accordion>
 
-            <S_Card>
-              <S_Accordion>
+            <S_Accordion>
+              <S_Card className="w-100">
                 <S_Summary>
-                  <div className="p-2">
-                    <div className="mb-2 border-b border-gray-200">
-                      右下起点
-                    </div>
-                    <div className="flex justify-center items-center">
-                      <div className="relative border-2 border-dashed border-gray-300 w-30 h-30 ">
-                        <div className="absolute bottom-4 right-4 bg-gray-100 border-2 border-gray-300 px-1">
-                          要素
-                        </div>
+                  <div className="flex justify-center p-1 border-b border-gray-200 bg-gray-50">
+                    右下起点
+                  </div>
+                  <div className="p-2 text-sm">
+                    right と bottom を指定している為、右下起点になります。
+                  </div>
+                  <div className="flex justify-center items-center p-2">
+                    <div className="relative border-2 border-dashed border-gray-300 w-30 h-30 ">
+                      <div className="absolute bottom-4 right-4 bg-gray-100 border-2 border-gray-300 px-1">
+                        要素
                       </div>
                     </div>
                   </div>
                 </S_Summary>
                 <S_Details>
-                  <div className="p-2 bg-gray-300 min-w-200">
-                    <p>&lt;div className="relative ..."&gt;</p>
-                    <p>&nbsp;&nbsp;&lt;div className="absolute ..."&gt;</p>
-                    <p>&nbsp;&nbsp;&nbsp;&nbsp;...</p>
-                    <p>&nbsp;&nbsp;&lt;/div&gt;</p>
-                    <p>&lt;/div&gt;</p>
-                  </div>
+                  <S_CodeView title="Tailwind CSS (.tsx)" code={sampleCode1} />
                 </S_Details>
-              </S_Accordion>
-            </S_Card>
+              </S_Card>
+            </S_Accordion>
 
           </div>
           
@@ -217,11 +219,10 @@ export default function TestPage() {
         {/* 配置２ */}
         <div className="p-4">
 
-          <p className="px-2 font-bold border-l-8 border-accent">Flexbox（柔軟配置）</p>
-          <p>
+          <S_Theme title="Flexbox（柔軟配置）">
             Flexbox を使用すると、要素を柔軟に配置できます。
             flex を指定した要素の子要素は、flex-direction（配置の方向）や justify-content（主軸の配置）などで配置を指定できます。
-          </p>
+          </S_Theme>
 
           <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-4">
 
@@ -229,7 +230,7 @@ export default function TestPage() {
               <S_Accordion>
                 <S_Summary>
                   <div className="p-2">
-                    <div className="mb-2 border-b border-gray-200">
+                    <div className="mb-2 border-b border-gray-200 bg-gray-100">
                       右下起点
                     </div>
                     <div className="flex justify-center items-center">
@@ -273,7 +274,7 @@ export default function TestPage() {
       <div className="p-4">
 
 
-
+        <S_CodeView title="Tailwind CSS (.tsx)" code={sampleCode1} />
 
         <p>配置</p>
         <div className="grid grid-cols-3 gap-2  bg-gray-100">
