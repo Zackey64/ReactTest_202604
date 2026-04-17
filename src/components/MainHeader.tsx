@@ -4,10 +4,10 @@ import Link from "next/link";
 export default function MainHeader() {
   return (
 
-    <header className="w-full">
+    <header>
       
       {/* 全域：指定幅内で均等割付 */}
-      <div className="max-w-7xl mx-auto py-4 justify-between items-center flex">
+      <div className="p-4 justify-between items-center flex">
 
         {/* 左端要素 */}
         <div className="text-3xl font-bold">

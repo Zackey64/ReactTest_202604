@@ -3,6 +3,58 @@
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+1+Code:wght@100..700&family=WDXL+Lubrifont+JP+N&display=swap');
 @import "tailwindcss";
 
+
+/* --- 基本設定（ライトモード） --- */
+:root {
+  --bg-main:   #ffffff;
+  --bg-sub:    #eeeeee;
+  --bg-border: #dddddd;
+  --text-soft: #666666;
+  --text-main: #333333;
+  --text-bold: #000000;
+}
+
+/* --- 基本設定（ダークモード） --- */
+@media (prefers-color-scheme: dark) {
+  :root {
+  --bg-main:   #111111;
+  --bg-sub:    #222222;
+  --bg-border: #333333;
+  --text-soft: #999999;
+  --text-main: #cccccc;
+  --text-bold: #ffffff;
+  }
+}
+
+/* Tailwind のテーマとして登録 */
+@theme {
+
+  /* ベース背景色（背景や線など） */
+  --color-bg-main: var(--bg-main);
+  --color-bg-sub: var(--bg-sub);
+  --color-bg-border: var(--bg-border);
+  /* ベース文字色（文字など） */
+  --color-text-soft: var(--text-soft);
+  --color-text-main: var(--text-main);
+  --color-text-bold: var(--text-bold);
+  /* アクセント色（背景や文字など） */
+  --color-accent-bg: var(--accent-bg);
+  --color-accent-text: var(--accent-text);
+
+
+
+
+
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+
+
+
+
+
+
 /* デザイン変数の定義 */
 @theme inline {
 
@@ -20,48 +72,86 @@
 }
 
 
+
+
+
+
+
+
+
 /* 標準タグのスタイル設定 */
 @layer base {
 
+  html {
+    scroll-behavior: smooth;
+    @apply bg-bg-sub;
+  }
+
   /* 全共通 */
   body {
-  
-    @apply bg-gray-500 text-base-text;
+    min-width: 320px;
+    
+    @apply max-w-7xl mx-auto;
+
+    @apply bg-bg-main text-text-main;
     @apply font-base;
+
+    @apply border-x border-bg-border;
+
     @apply antialiased min-h-screen;/* 文字を読みやすくする設定 */
 
   }
 
+
+
   /* 大枠 */
  header {
-    @apply bg-main text-main-text; 
-    @apply z-50 w-full px-8; /* 最前面＋最大領域 */
-    
+    @apply z-50 w-full;/* 最前面＋最大領域 */
+    @apply border-b border-bg-border;
   }
   nav {
-    @apply bg-main text-main-text; 
-    @apply z-50 w-full px-8; /* 最前面＋最大領域 */
+    @apply z-50 w-full;/* 最前面＋最大領域 */
+    @apply border-b border-bg-border;
 
+    @apply sticky top-0; /* スクロールしても常に上部に表示 */
+    @apply bg-bg-main text-text-main;
   }
   main {
-    @apply bg-base text-base-text;
-    @apply max-w-7xl mx-auto px-6 py-12;/* 左右の余白と最大幅 */
+
+    @apply p-4;
     
   }
   footer {
-    @apply bg-main text-main-text; 
-    @apply z-50 w-full p-8 text-center; /* パディング＋中央寄せ */
+    @apply z-50 w-full;/* 最前面＋最大領域 */
+    @apply border-t border-bg-border;
+
+    @apply text-center;
   }
+
+
 
     /* 小枠 */
   h1 {
     @apply text-3xl font-bold;
     @apply py-2;
   }
+  h2 {
+    @apply text-2xl font-bold;
+    @apply py-2;
+  }
+  h3 {
+    @apply text-xl font-bold;
+    @apply py-2;
+  }
   p {
+    @apply text-lg font-normal;
     @apply leading-relaxed;
   }
 
+  img, video, canvas, svg {
+    max-width: 100%;
+    height: auto;
+  }
 
 
 }

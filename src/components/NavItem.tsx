@@ -17,11 +17,10 @@ export const NavItem = ({
 
     <Link
         href={href}
-        className="flex-1 flex flex-col items-center p-1 transition-all duration-300
-         border-t-2 border-accent
+        className="flex-1 flex flex-col items-center p-2 transition-all duration-300
          hover:bg-accent hover:text-accent-text"
     >   
-        <div className="relative w-10 h-10 md:w-6 md:h-6">
+        <div className="relative w-8 h-8 md:w-4 md:h-4">
             <Image
                 src={icon} 
                 alt={label}

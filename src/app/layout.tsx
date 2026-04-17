@@ -39,7 +39,7 @@ export default function RootLayout({
 
         </main>
 
-        <footer>
+        <footer className="py-8">
           フッター
           © 2026 miho inc.
         </footer>
