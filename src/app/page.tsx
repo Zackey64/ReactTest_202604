@@ -1,5 +1,6 @@
 import { Frame } from "@/components/atoms/Frame";
 import Image from "next/image";
+import { Button } from "@/components/atoms/Button";
 
 export default function Home() {
   return (
@@ -11,6 +12,16 @@ export default function Home() {
         <p className="text-text-soft">目立たせない文章</p>
         <p className="text-text-main">通常の文章</p>
         <p className="text-text-bold">目立たせたい文章</p>
+      </Frame>
+      <Frame className="p-4 mb-4">
+        ボタン
+        <Button variant="outline">outline</Button>
+        <Button variant="fill">fill</Button>
+      </Frame>
+      <Frame className="p-4 mb-4 bg-accent-hover border-none">
+        ボタン
+        <Button variant="outline">outline</Button>
+        <Button variant="fill">fill</Button>
       </Frame>
       
       <p>

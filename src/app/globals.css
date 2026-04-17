@@ -6,23 +6,30 @@
 
 /* --- 基本設定（ライトモード） --- */
 :root {
-  --bg-main:   #ffffff;
-  --bg-sub:    #eeeeee;
+  --bg-main: #ffffff;
+  --bg-hover: #eeeeee;
   --bg-border: #dddddd;
-  --text-soft: #666666;
-  --text-main: #333333;
+  --text-soft: #888888;
+  --text-main: #444444;
   --text-bold: #000000;
+  --accent-main: #3399ff;
+  --accent-hover: #bbddff;
+  --accent-text: #ffffff;
+
 }
 
 /* --- 基本設定（ダークモード） --- */
 @media (prefers-color-scheme: dark) {
   :root {
-  --bg-main:   #111111;
-  --bg-sub:    #222222;
+  --bg-main: #111111;
+  --bg-hover: #222222;
   --bg-border: #333333;
   --text-soft: #999999;
   --text-main: #cccccc;
   --text-bold: #ffffff;
+  --accent-main: #3399ff;
+  --accent-hover: #003366;
+  --accent-text: #ffffff;
   }
 }
 
@@ -30,16 +37,17 @@
 @theme {
 
   /* ベース背景色（背景や線など） */
-  --color-bg-main: var(--bg-main);
-  --color-bg-sub: var(--bg-sub);
+  --color-bg-main:   var(--bg-main);
+  --color-bg-hover:  var(--bg-hover);
   --color-bg-border: var(--bg-border);
   /* ベース文字色（文字など） */
   --color-text-soft: var(--text-soft);
   --color-text-main: var(--text-main);
   --color-text-bold: var(--text-bold);
   /* アクセント色（背景や文字など） */
-  --color-accent-bg: var(--accent-bg);
-  --color-accent-text: var(--accent-text);
+  --color-accent-main:  var(--accent-main);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-text:  var(--accent-text);
 
 
 
@@ -58,14 +66,7 @@
 /* デザイン変数の定義 */
 @theme inline {
 
-  /* 背景色 */
-  --color-base  : #ffffff;
-  --color-main  : #333333;
-  --color-accent: #ff9900;
-  /* 文字色 */
-  --color-base-text  : #666666;
-  --color-main-text  : #ffffff;
-  --color-accent-text: #333333;
+
   /* フォントの追加 */
   --font-base:  "M PLUS 1 Code", monospace;
   --font-accent: "WDXL Lubrifont JP N", sans-serif;
@@ -84,7 +85,7 @@
 
   html {
     scroll-behavior: smooth;
-    @apply bg-bg-sub;
+    @apply bg-bg-hover;
   }
 
   /* 全共通 */
