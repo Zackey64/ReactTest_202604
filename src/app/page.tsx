@@ -13,17 +13,18 @@ export default function Home() {
         <p className="text-text-main">通常の文章</p>
         <p className="text-text-bold">目立たせたい文章</p>
       </Frame>
+
+
+
+      
+
       <Frame className="p-4 mb-4">
-        ボタン
-        <Button variant="outline">outline</Button>
-        <Button variant="fill">fill</Button>
-      </Frame>
-      <Frame className="p-4 mb-4 bg-accent-hover border-none">
-        ボタン
-        <Button variant="outline">outline</Button>
-        <Button variant="fill">fill</Button>
+        <p>何かしらのタイトル</p>
+        <p className="text-text-soft text-sm">捕捉します</p>
       </Frame>
       
+
+
       <p>
         私たちは毎日目に入る色によって刺激を受けています。空の青と木々の緑は清々しい気持ちにしてくれて、
         空が曇り灰色になると自分の気分までもが暗くなる人も多いのではないでしょうか。
@@ -33,7 +34,7 @@ export default function Home() {
         ホームページデザインにおいて、「色」は訪問者の第一印象を決定づける重要な要素です。
         最後までお読みいただき、ぜひあなたのホームページ運営にお役立てください。
       </p>
-      <div className="relative w-full h-80">
+      <div className="relative flex w-full h-100">
         <Image
           src="/bg1.png" // 画像のパスを指定
           alt="Description of the image"

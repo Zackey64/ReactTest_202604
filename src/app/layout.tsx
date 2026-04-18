@@ -3,8 +3,9 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
  // 作ったコンポーネントをインポート
-import Header from "@/components/MainHeader";
-import Navbar from "@/components/MainNavbar";
+import {Header} from "@/components/organisms/Header";
+import {Navbar} from "@/components/organisms/Navbar";
+import {Footer} from "@/components/organisms/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,24 +28,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+
     <html lang="ja">
       <body>
-
         <Header />
         <Navbar />
-
         <main>
-
           {children}
-
         </main>
-
-        <footer className="py-8">
-          フッター
-          © 2026 miho inc.
-        </footer>
-
+        <Footer />
       </body>
     </html>
+
   );
 }

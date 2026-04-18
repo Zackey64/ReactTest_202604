@@ -4,69 +4,100 @@
 @import "tailwindcss";
 
 
-/* --- 基本設定（ライトモード） --- */
+
 :root {
-  --bg-main: #ffffff;
-  --bg-hover: #eeeeee;
-  --bg-border: #dddddd;
+
+  /* ーーーー　通常　モード　ーーーー */
+  /* ベース */
+  --base: #ffffff;
+  --base-fill: #eeeeee;
+  --base-line: #cccccc;
+  /* メイン */
+  --main: #003366;
+  --main-fill: #ddeeff;
+  /* アクセント */
+  --accent: #ffcc33;
+  --accent-fill: #ffffcc;
+  /* 文字 */
+  --text: #444444;
   --text-soft: #888888;
-  --text-main: #444444;
-  --text-bold: #000000;
-  --accent-main: #3399ff;
-  --accent-hover: #bbddff;
+  --text-hard: #000000;
+  --main-text: #ffffff;
   --accent-text: #ffffff;
+  /* ーーーー　ダークモード　ーーーー */
+  /* ベース */
+  --dark-base: #111111;
+  --dark-base-fill: #222222;
+  --dark-base-line: #444444;
+  /* メイン */
+  --dark-main: #006633;
+  --dark-main-fill: #003311;
+  /* アクセント */
+  --dark-accent: #99cc00;
+  --dark-accent-fill: #113300;
+  /* 文字 */
+  --dark-text: #dddddd;
+  --dark-text-soft: #aaaaaa;
+  --dark-text-hard: #ffffff;
+  --dark-main-text: #ffffff;
+  --dark-accent-text: #ffffff;
+  /* ーーーーーーーーーーーーーーーー */
 
 }
 
-/* --- 基本設定（ダークモード） --- */
-@media (prefers-color-scheme: dark) {
-  :root {
-  --bg-main: #111111;
-  --bg-hover: #222222;
-  --bg-border: #333333;
-  --text-soft: #999999;
-  --text-main: #cccccc;
-  --text-bold: #ffffff;
-  --accent-main: #3399ff;
-  --accent-hover: #003366;
-  --accent-text: #ffffff;
-  }
-}
+
 
 /* Tailwind のテーマとして登録 */
 @theme {
-
-  /* ベース背景色（背景や線など） */
-  --color-bg-main:   var(--bg-main);
-  --color-bg-hover:  var(--bg-hover);
-  --color-bg-border: var(--bg-border);
-  /* ベース文字色（文字など） */
-  --color-text-soft: var(--text-soft);
-  --color-text-main: var(--text-main);
-  --color-text-bold: var(--text-bold);
-  /* アクセント色（背景や文字など） */
-  --color-accent-main:  var(--accent-main);
-  --color-accent-hover: var(--accent-hover);
-  --color-accent-text:  var(--accent-text);
-
-
 
 
 
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  /* ーーーー 色　ーーーー */
+  --color-base: var(--base);
+  --color-base-fill: var(--base-fill);
+  --color-base-line: var(--base-line);
+  --color-main: var(--main);
+  --color-main-fill: var(--main-fill);
+  --color-acnt: var(--accent);
+  --color-acnt-fill: var(--accent-fill);
+
+  --color-text: var(--text);
+  --color-text-soft: var(--text-soft);
+  --color-text-hard: var(--text-hard);
+  --color-main-text: var(--main-text);
+  --color-acnt-text: var(--accent-text);
+
 }
 
+/* --- 基本設定（ダークモード） --- */
+@media (prefers-color-scheme:dark) {
+  :root {
+  
+  /* ーーーー 色　ーーーー */
+  --color-base: var(--dark-base);
+  --color-base-fill: var(--dark-base-fill);
+  --color-base-line: var(--dark-base-line);
+  --color-main: var(--dark-main);
+  --color-main-fill: var(--dark-main-fill);
+  --color-acnt: var(--dark-accent);
+  --color-acnt-fill: var(--dark-accent-fill);
+ 
+  --color-text: var(--dark-text);
+  --color-text-soft: var(--dark-text-soft);
+  --color-text-hard: var(--dark-text-hard);
+  --color-main-text: var(--dark-main-text);
+  --color-acnt-text: var(--dark-accent-text);
 
-
-
+  }
+}
 
 
 
 /* デザイン変数の定義 */
 @theme inline {
-
-
   /* フォントの追加 */
   --font-base:  "M PLUS 1 Code", monospace;
   --font-accent: "WDXL Lubrifont JP N", sans-serif;
@@ -74,33 +105,23 @@
 
 
 
-
-
-
-
-
-
 /* 標準タグのスタイル設定 */
 @layer base {
 
+
   html {
-    scroll-behavior: smooth;
-    @apply bg-bg-hover;
+    @apply bg-base-fill;
   }
 
   /* 全共通 */
   body {
     min-width: 320px;
-    
     @apply max-w-7xl mx-auto;
 
-    @apply bg-bg-main text-text-main;
+    @apply bg-base text-text;
     @apply font-base;
-
-    @apply border-x border-bg-border;
-
+    @apply border-x border-base-line;
     @apply antialiased min-h-screen;/* 文字を読みやすくする設定 */
-
   }
 
 
@@ -108,25 +129,18 @@
   /* 大枠 */
  header {
     @apply z-50 w-full;/* 最前面＋最大領域 */
-    @apply border-b border-bg-border;
+    @apply bg-main text-main-text;
   }
   nav {
     @apply z-50 w-full;/* 最前面＋最大領域 */
-    @apply border-b border-bg-border;
-
-    @apply sticky top-0; /* スクロールしても常に上部に表示 */
-    @apply bg-bg-main text-text-main;
+    @apply bg-acnt;
   }
   main {
-
     @apply p-4;
-    
   }
   footer {
     @apply z-50 w-full;/* 最前面＋最大領域 */
-    @apply border-t border-bg-border;
-
-    @apply text-center;
+    @apply bg-main text-main-text;
   }
 
 
@@ -148,12 +162,10 @@
     @apply text-lg font-normal;
     @apply leading-relaxed;
   }
-
   img, video, canvas, svg {
     max-width: 100%;
     height: auto;
   }
-
 
 }
 
