@@ -1,13 +1,13 @@
 
 import Link from "next/link";
-import {NavItem} from "@/components/NavItem";
+import {NavItem} from "@/components/atoms/NavItem";
 
 export const Navbar = () => {
   return (
 
-    <nav className="sticky top-0">
+    <nav className="p-2 sticky top-0 w-full bg-bg/0">
       
-      <div className="px-4 items-center flex justify-between">
+      <div className="p-2 w-full flex flex-wrap items-center gap-2 bg-base/90 rounded-xl shadow-md">
 
         <NavItem label="ホーム" href="/" icon="file.svg" />
         <NavItem label="テスト" href="/test" icon="file.svg" />

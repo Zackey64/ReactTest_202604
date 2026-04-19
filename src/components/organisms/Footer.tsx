@@ -5,7 +5,7 @@ import Link from "next/link";
 export const Footer = () => {
   return (
 
-    <footer>
+    <footer className="rounded-t-xl shadow-md">
       
       <div className="p-4 py-16 text-center">
 

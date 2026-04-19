@@ -1,11 +1,28 @@
 import { Frame } from "@/components/atoms/Frame";
 import { Button } from "@/components/atoms/Button";
+import Image from "next/image";
 
 export default function TestPage() {
 
   return (
 
     <div>
+      
+
+
+      <div className="relative w-full h-100">
+        <Image
+          src="/bg1.png" // 画像のパスを指定
+          alt="Description of the image"
+          fill
+          className="w-full h-auto object-cover"
+        />
+      </div>
+
+
+
+
+
       <h1>デザインテスト</h1>
       <p>Tailwind CSS を使用したスタイルテスト</p>
       
@@ -39,28 +56,49 @@ export default function TestPage() {
         </div>
       </Frame>
 
-      <Frame className="my-4 p-4 grid grid-cols-3 gap-4">
 
-        <Frame className="p-2 flex justify-center items-center">
-          Base(+line)
-        </Frame>
-        <Frame type="main" className="p-2 flex justify-center items-center">
-          Main
-        </Frame>
-        <Frame type="accent" className="p-2 flex justify-center items-center">
-          Accent
-        </Frame>
-        <Frame type="basefill" className="p-2 flex justify-center items-center">
-          Base fill
-        </Frame>
-        <Frame type="mainfill" className="p-2 flex justify-center items-center">
-          Main fill
-        </Frame>  
-        <Frame type="accentfill" className="p-2 flex justify-center items-center">
-          Accent fill
-        </Frame>  
+
+      <Frame className="my-4 grid grid-cols-1">
+
+        <div className="p-4  grid grid-cols-4 gap-4 bg-base">
+          <Frame className="
+            p-2 flex justify-center items-center
+          ">Standerd</Frame>
+          <Frame className="
+            p-2 flex justify-center items-center
+            border-none bg-main text-base font-bold
+          ">main</Frame>
+          <Frame className="
+            p-2 flex justify-center items-center
+            border-none bg-main text-acnt font-bold
+          ">Standerd</Frame>
+          <Frame className="
+            p-2 flex justify-center items-center
+            border-none bg-acnt text-main font-bold
+          ">Standerd</Frame>
+        </div>
+        
+        <div className="p-4  grid grid-cols-3 gap-4 bg-base border-t border-border">
+          <Frame className="
+            p-2 flex justify-center items-center
+          ">Standerd</Frame>
+          <Frame className="
+            p-2 flex justify-center items-center
+            border-none bg-main text-base font-bold
+          ">main</Frame>
+          <Frame className="
+            p-2 flex justify-center items-center
+            border-none bg-main text-acnt font-bold
+          ">Standerd</Frame>
+          <Frame className="
+            p-2 flex justify-center items-center
+            border-none bg-acnt text-main font-bold
+          ">Standerd</Frame>
+        </div>
 
       </Frame>
+
+
 
       <Frame className="my-4 p-4 grid grid-cols-2 gap-4">
 

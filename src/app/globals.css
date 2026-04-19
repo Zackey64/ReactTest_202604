@@ -43,6 +43,16 @@
   --dark-accent-text: #ffffff;
   /* ーーーーーーーーーーーーーーーー */
 
+
+  
+
+
+
+
+
+
+
+
 }
 
 
@@ -69,6 +79,20 @@
   --color-text-hard: var(--text-hard);
   --color-main-text: var(--main-text);
   --color-acnt-text: var(--accent-text);
+
+
+  --color-bg:   #ddeeff;
+  --color-text: #444444;
+  --color-text-soft: #888888;
+
+  --color-base: #ffffff;
+  --color-hover: #eeeeee;
+  --color-border: #dddddd;
+
+  --color-main: #003366;
+  --color-acnt: #ffcc33;
+
+
 
 }
 
@@ -110,17 +134,14 @@
 
 
   html {
-    @apply bg-base-fill;
+    @apply bg-bg text-text border-border;
+    @apply font-base;
+        @apply max-w-7xl mx-auto;
   }
 
   /* 全共通 */
   body {
     min-width: 320px;
-    @apply max-w-7xl mx-auto;
-
-    @apply bg-base text-text;
-    @apply font-base;
-    @apply border-x border-base-line;
     @apply antialiased min-h-screen;/* 文字を読みやすくする設定 */
   }
 
@@ -133,10 +154,11 @@
   }
   nav {
     @apply z-50 w-full;/* 最前面＋最大領域 */
-    @apply bg-acnt;
+    @apply bg-base;
   }
   main {
     @apply p-4;
+    @apply max-w-5xl mx-auto;
   }
   footer {
     @apply z-50 w-full;/* 最前面＋最大領域 */
