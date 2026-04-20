@@ -2,7 +2,14 @@ import { Frame } from "@/components/atoms/Frame";
 import Image from "next/image";
 import { Button } from "@/components/atoms/Button";
 
+import Link from 'next/link';
+import { getSortedPostsData } from '@/lib/posts';
+
+
 export default function Home() {
+
+  const posts = getSortedPostsData();
+
   return (
     <main className="">
       <Frame className="p-4 mb-4">
@@ -43,6 +50,19 @@ export default function Home() {
         />
       </div>
       
+      <ul className="space-y-4">
+        {posts.map(({ slug, title, date }) => (
+          <li key={slug} className="border-b pb-4">
+            <Link href={`/blog/${slug}`} className="text-xl text-blue-600 hover:underline">
+              {title}
+            </Link>
+            <p className="text-sm text-gray-500">{date}</p>
+          </li>
+        ))}
+      </ul>
+      
+
+
 
     </main>
   );
