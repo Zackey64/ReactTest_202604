@@ -4,6 +4,8 @@ import remarkGfm from 'remark-gfm';
 import rehypeHighlight from 'rehype-highlight'
 import { Frame } from '@/components/atoms/Frame';
 
+import 'highlight.js/styles/atom-one-dark.css';
+
 // 1. 型定義（TypeScript）
 interface PostPageProps {
   params: Promise<{ slug: string }>; // Next.js 15では params は Promise
@@ -19,19 +21,20 @@ export default async function PostPage({ params }: PostPageProps) {
 
   return (
 
-    <main>
+    <div>
       <article className=" text-text ">
         
-      <div className="mb-8 p-4 border-b pb-4">
-        <h1 className="text-4xl font-bold mb-2">{post?.frontmatter.title}</h1>
-        <p className="">{post?.frontmatter.date}</p>
+      <div className="mb-4 border-b border-main">
+        <h1 className="font-bold text-main">{post?.frontmatter.title}</h1>
+        <p className="text-text">{post?.frontmatter.description}</p>
+        <p className="text-text">{post?.frontmatter.date}</p>
       </div>
 
 
 
       {/* Markdownを表示 */}
 
-      <Frame className="p-4 prose prose-slate max-w-none">
+      <Frame className="p-8 prose prose-slate max-w-none">
 
         <ReactMarkdown
           remarkPlugins={[remarkGfm]}
@@ -49,7 +52,7 @@ export default async function PostPage({ params }: PostPageProps) {
       
 
       </article>
-    </main>
+    </div>
     
   );
 }

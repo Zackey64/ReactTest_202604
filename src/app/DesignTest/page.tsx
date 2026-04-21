@@ -1,6 +1,7 @@
 import { Frame } from "@/components/atoms/Frame";
 import { Button } from "@/components/atoms/Button";
 import Image from "next/image";
+import {SetImage} from "@/components/atoms/Image";
 
 export default function TestPage() {
 
@@ -10,14 +11,12 @@ export default function TestPage() {
       
 
 
-      <div className="relative w-full h-100">
-        <Image
-          src="/bg1.png" // 画像のパスを指定
-          alt="Description of the image"
-          fill
-          className="w-full h-auto object-cover"
-        />
-      </div>
+      
+
+      <SetImage src="/bg1.png" alt="" />
+      <SetImage src="/AAAAAAA.png" alt="" />
+      
+      
 
 
 
@@ -38,6 +37,40 @@ export default function TestPage() {
           <p className="text-text">通常の文章</p>
           <p className="text-text-hard">目立たせたい文章</p>
         </div>
+      </Frame>
+
+      <Frame className="my-4 px-4">
+        <ul>
+          <li>要素１</li>
+          <li>要素１</li>
+          <li>要素１</li>
+          <li>要素１</li>
+        </ul>
+        <ol>
+          <li>要素１</li>
+          <li>要素１</li>
+          <li>要素１</li>
+          <li>要素１</li>
+        </ol>
+      </Frame>
+
+      <Frame className="my-4 px-4">
+        <ol>
+  <li>果物
+    <ul>
+      <li>りんご</li>
+      <li>バナナ</li>
+      <li>オレンジ</li>
+    </ul>
+  </li>
+  <li>野菜
+    <ul>
+      <li>にんじん</li>
+      <li>トマト</li>
+      <li>きゅうり</li>
+    </ul>
+  </li>
+</ol>
       </Frame>
 
       <Frame className="my-4 grid grid-cols-3">

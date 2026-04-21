@@ -5,6 +5,7 @@ import "./globals.css";
  // 作ったコンポーネントをインポート
 import {Header} from "@/components/organisms/Header";
 import {Navbar} from "@/components/organisms/Navbar";
+import {Sidebar} from "@/components/organisms/Sidebar";
 import {Footer} from "@/components/organisms/Footer";
 
 const geistSans = Geist({
@@ -32,10 +33,13 @@ export default function RootLayout({
     <html lang="ja">
       <body>
         <Header />
+        
         <Navbar />
+
         <main>
           {children}
         </main>
+        
         <Footer />
       </body>
     </html>
