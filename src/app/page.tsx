@@ -3,12 +3,15 @@ import Image from "next/image";
 import { Button } from "@/components/atoms/Button";
 
 import Link from 'next/link';
-import { getSortedPostsData } from '@/lib/posts';
+
+import { getAllPosts } from '@/lib/posts';
+import PostList from '@/components/molecules/PostList';
 
 
 export default function Home() {
 
-  const posts = getSortedPostsData();
+  
+  const posts = getAllPosts().slice(0, 3);
 
   return (
     <main className="">
@@ -50,16 +53,13 @@ export default function Home() {
         />
       </div>
       
-      <ul className="space-y-4">
-        {posts.map(({ slug, title, date }) => (
-          <li key={slug} className="border-b pb-4">
-            <Link href={`/blog/${slug}`} className="text-xl text-blue-600 hover:underline">
-              {title}
-            </Link>
-            <p className="text-sm text-gray-500">{date}</p>
-          </li>
-        ))}
-      </ul>
+      <Frame className="p-4" >
+        <h1>Posts</h1>
+        <PostList posts={posts} />
+        <div className="p-4 border-t border-border">
+
+        </div>
+      </Frame>
       
 
 

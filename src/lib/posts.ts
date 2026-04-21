@@ -4,30 +4,49 @@ import matter from 'gray-matter';
 
 const postsDirectory = path.join(process.cwd(), 'posts');
 
-export function getSortedPostsData() {
-  
+
+
+export function getAllPosts() {
   const fileNames = fs.readdirSync(postsDirectory);
 
-  return fileNames.filter((fileName) => fileName.endsWith('.md')).map((fileName) => {
-    const slug = fileName.replace(/\.md$/, '');
-    const fullPath = path.join(postsDirectory, fileName);
-    const fileContents = fs.readFileSync(fullPath, 'utf8');
-    const { data } = matter(fileContents);
-    return { slug, ...(data as { title: string; date: string }) };
-  });
+  const allPostsData = fileNames
+    .filter((fileName) => fileName.endsWith('.md')) // .mdファイルのみ対象
+    .map((fileName) => {
+      const slug = fileName.replace(/\.md$/, '');
+      const fullPath = path.join(postsDirectory, fileName);
+      const fileContents = fs.readFileSync(fullPath, 'utf8');
+
+      // Markdownのメタデータをパース
+      const { data } = matter(fileContents);
+
+      return {
+        slug,
+        title: data.title,
+        date: data.date,
+        description: data.description,
+        tags: data.tags || [],
+        ...data,
+      };
+    });
+
+  // 日付順（新しい順）に並び替え
+  return allPostsData.sort((a, b) => (a.date < b.date ? 1 : -1));
 }
 
-// 【追加】個別記事の取得
-export async function getPostData(slug: string) {
+
+
+// 2. slugから特定の記事1件を取得（詳細ページ用）
+export function getPost(slug: string) {
   const fullPath = path.join(postsDirectory, `${slug}.md`);
+  
+  if (!fs.existsSync(fullPath)) return null;
+
   const fileContents = fs.readFileSync(fullPath, 'utf8');
-  console.log("探している場所:", fullPath);
-  // メタデータと本文を解析
   const { data, content } = matter(fileContents);
 
   return {
     slug,
-    content,
-    ...(data as { title: string; date: string }),
+    frontmatter: data,
+    content, // 本文（Markdown文字列）
   };
 }
