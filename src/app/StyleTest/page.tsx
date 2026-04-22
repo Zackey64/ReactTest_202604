@@ -4,6 +4,8 @@ import {S_Card, S_TitleCard} from "@/components/S_Card";
 import { S_Accordion, S_Summary, S_Details } from "@/components/S_Accordion";
 import { S_CodeView } from "@/components/S_CodeView";
 
+import {MainTitle} from '@/components/molecules/MainTitle';
+
 export default function TestPage() {
 
 
@@ -16,8 +18,11 @@ export default function TestPage() {
 
   return (
     <div>
-      <h1>スタイルテスト</h1>
-      <p>Tailwind CSS を使用したスタイルテスト</p>
+
+      <MainTitle title="スタイルテスト">
+        <p>Tailwind CSS を使用したスタイルテスト</p>
+      </MainTitle>
+
       
       
       

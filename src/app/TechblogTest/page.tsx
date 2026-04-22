@@ -1,6 +1,8 @@
 import { Frame } from "@/components/atoms/Frame";
 
 import { getAllPosts } from '@/lib/posts';
+
+import {MainTitle} from '@/components/molecules/MainTitle';
 import PostList from '@/components/molecules/PostList';
 
 
@@ -12,12 +14,10 @@ export default function Blog() {
   return (
     <main>
 
-
-      <div className="">
-        <h1>技術ブログ</h1>
+      <MainTitle title="技術ブログ">
         <p>自分の忘備録用に付けてます。あとから自分で見返したりできるようにできるだけわかりやすくしています。</p>
         <p>ちなみにマークダウン記法で作成してます。</p>
-      </div>
+      </MainTitle>
       
 
       <Frame className="my-8 p-4" >

@@ -24,6 +24,7 @@ export function getAllPosts() {
         title: data.title,
         date: data.date,
         description: data.description,
+        image: data.image,
         tags: data.tags || [],
         ...data,
       };

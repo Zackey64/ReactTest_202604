@@ -3,6 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+1+Code:wght@100..700&family=WDXL+Lubrifont+JP+N&display=swap');
 @import "tailwindcss";
 
+@plugin "@tailwindcss/typography";
 
 
 :root {
@@ -157,7 +158,6 @@
     @apply bg-base;
   }
   main {
-    @apply p-4;
     @apply max-w-5xl mx-auto;
   }
   footer {
@@ -170,18 +170,17 @@
     /* 小枠 */
   h1 {
     @apply text-3xl font-bold;
-    @apply pl-4 my-4 ;
-    @apply border-l-8 border-main text-main;
+    @apply my-2;
   }
   h2 {
     @apply text-2xl font-bold;
-    @apply my-2 pb-1;
-    @apply border-b border-border;
+    @apply my-2;
+
   }
   h3 {
     @apply text-xl font-bold;
-    @apply my-2 pb-1;
-    @apply border-b border-border;
+    @apply my-2;
+
   }
   p {
     @apply text-lg font-normal;
@@ -190,35 +189,7 @@
 
 
 
-  ul {
-    @apply text-lg font-normal;
-    @apply list-disc list-inside;
-
-  }
-  ol {
-    @apply text-lg font-normal;
-    @apply list-decimal list-inside;
-
-  }
-
-
-  table {
-    @apply m-2;
-  }
-  thead {
-    @apply text-lg font-normal;
-    @apply border-y border-border mb-1;
-  }
-  tbody{
-    @apply text-lg font-normal;
-    @apply border-b border-border;
-  }
-  tr {
-    @apply border-b border-border;
-  }
-  th,td {
-    @apply px-2;
-  }
+  
 
 
   img, video, canvas, svg {

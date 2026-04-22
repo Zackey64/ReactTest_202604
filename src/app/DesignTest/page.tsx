@@ -3,13 +3,17 @@ import { Button } from "@/components/atoms/Button";
 import Image from "next/image";
 import {SetImage} from "@/components/atoms/Image";
 
+import {MainTitle} from '@/components/molecules/MainTitle';
+
 export default function TestPage() {
 
   return (
 
     <div>
       
-
+      <MainTitle title="デザインテスト">
+        <p>Tailwind CSS を使用したスタイルテスト</p>
+      </MainTitle>
 
       
 
@@ -21,9 +25,6 @@ export default function TestPage() {
 
 
 
-
-      <h1>デザインテスト</h1>
-      <p>Tailwind CSS を使用したスタイルテスト</p>
       
       {/* 1 */}
       <Frame className="my-4 px-4">
