@@ -3,7 +3,9 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeHighlight from 'rehype-highlight'
 import { Frame } from '@/components/atoms/Frame';
-
+import { Button } from "@/components/atoms/Button";
+import {MainTitle} from '@/components/molecules/MainTitle';
+import {SetImage} from "@/components/atoms/Image";
 import 'highlight.js/styles/atom-one-dark.css';
 
 // 1. 型定義（TypeScript）
@@ -21,20 +23,19 @@ export default async function PostPage({ params }: PostPageProps) {
 
   return (
 
-    <div>
-      <article className=" text-text ">
+    <main>
+      <article>
         
-      <div className="mb-4 border-b border-main">
-        <h1 className="font-bold text-main">{post?.frontmatter.title}</h1>
-        <p className="text-text">{post?.frontmatter.description}</p>
-        <p className="text-text">{post?.frontmatter.date}</p>
-      </div>
-
-
+      <MainTitle title={post?.frontmatter.title}>
+              <p className="text-text">{post?.frontmatter.description}</p>
+              
+      </MainTitle>
+      <SetImage src={post?.frontmatter.image} alt="" aspectRatio="video" className="my-8"/>
+      <div className="text-text-soft text-sm p-2">{post?.frontmatter.date}に作成</div>
 
       {/* Markdownを表示 */}
 
-      <Frame className="p-8 prose prose-slate max-w-none">
+      <Frame className="p-4 py-16 prose prose-slate max-w-none">
 
         <ReactMarkdown
           remarkPlugins={[remarkGfm]}
@@ -43,16 +44,18 @@ export default async function PostPage({ params }: PostPageProps) {
           {post?.content}
         </ReactMarkdown>
 
-        <div className="mt-4 pt-4 border-t border-border">
-          ←　記事一覧へ
-        </div>
-
       </Frame>
 
-      
+      <div className="my-8">
+              <a href="/TechblogTest">
+                <Button variant="fill"className="w-40 h-8">
+                  一覧へ戻る
+                </Button>
+              </a>
+            </div>
 
       </article>
-    </div>
+    </main>
     
   );
 }

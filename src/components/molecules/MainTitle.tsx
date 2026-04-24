@@ -16,16 +16,16 @@ export const MainTitle = ({
 }: MainTitleProps) => {
 
   const types = {
-    normal:  "flex flex-col items-center justify-center text-center",
+    normal:  "flex flex-col items-start justify-center",
     main:    "bg-main text-base",
     accent:  "bg-acnt text-base",
   };
   
   return (
 
-    <div className={cn("mx-4",types[type], className)}>
+    <div className={cn("my-8",types[type], className)}>
         
-        <h1 className="px-8 py-2 text-main border-b border-main">{title}</h1>
+        <h1 className="text-acnt">{title}</h1>
         {children}
         
     </div>

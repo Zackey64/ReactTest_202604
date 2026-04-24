@@ -40,39 +40,9 @@ export default function TestPage() {
         </div>
       </Frame>
 
-      <Frame className="my-4 px-4">
-        <ul>
-          <li>要素１</li>
-          <li>要素１</li>
-          <li>要素１</li>
-          <li>要素１</li>
-        </ul>
-        <ol>
-          <li>要素１</li>
-          <li>要素１</li>
-          <li>要素１</li>
-          <li>要素１</li>
-        </ol>
-      </Frame>
 
-      <Frame className="my-4 px-4">
-        <ol>
-  <li>果物
-    <ul>
-      <li>りんご</li>
-      <li>バナナ</li>
-      <li>オレンジ</li>
-    </ul>
-  </li>
-  <li>野菜
-    <ul>
-      <li>にんじん</li>
-      <li>トマト</li>
-      <li>きゅうり</li>
-    </ul>
-  </li>
-</ol>
-      </Frame>
+
+
 
       <Frame className="my-4 grid grid-cols-3">
         <div className="m-4">
@@ -159,7 +129,147 @@ export default function TestPage() {
 
 
 
+      <Frame className="p-4  flex flex-col items-center justify-center">
+        <h2>グリットレイアウト</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
 
+          <div className=" flex flex-col gap-4">
+            <div className="aspect-video bg-blue-200 rounded-lg"></div>
+            <div>
+              <h3>Sample01</h3>
+              <p>
+                レスポンシブデザインとは、画面サイズが異なるデバイス（スマホ、タブレット、PCなど）でも、見やすくデザインを調整する手法です。
+              </p>
+            </div>
+          </div>
+
+          <div className=" flex flex-col gap-4">
+            <div className="aspect-video bg-blue-200 rounded-lg"></div>
+            <div>
+              <h3>Sample02</h3>
+              <p>
+                画面サイズによって文字の大きさやレイアウトが変わるようにすることで、ユーザーに最適な見た目を提供できます。
+              </p>
+            </div>
+          </div>
+
+          <div className=" flex flex-col gap-4">
+            <div className="aspect-video bg-blue-200 rounded-lg"></div>
+            <div>
+              <h3>Sample03</h3>
+              <p>
+                レスポンシブデザインとは、画面サイズが異なるデバイス（スマホ、タブレット、PCなど）でも、見やすくデザインを調整する手法です。
+              </p>
+            </div>
+          </div>
+
+          <div className=" flex flex-col gap-4">
+            <div className="aspect-video bg-blue-200 rounded-lg"></div>
+            <div>
+              <h3>Sample04</h3>
+              <p>
+                画面サイズによって文字の大きさやレイアウトが変わるようにすることで、ユーザーに最適な見た目を提供できます。
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </Frame>
+
+      <Frame className="p-4">
+        <h2>グリットレイアウト（リミット付）</h2>
+        <div className="grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-2 justify-center justify-items-center">
+
+          <div className=" bg-red-200  p-8  max-w-sm">01</div>
+          <div className=" bg-red-200  p-8  max-w-sm">02</div>
+          <div className=" bg-red-200  p-8  max-w-sm">03</div>
+          <div className=" bg-red-200  p-8  max-w-sm">04</div>
+          <div className=" bg-red-200  p-8  max-w-sm">05</div>
+          <div className=" bg-red-200  p-8  max-w-sm">06</div>
+          <div className=" bg-red-200  p-8  max-w-sm">07</div>
+          <div className=" bg-red-200  p-8  max-w-sm">08</div>
+          <div className=" bg-red-200  p-8  max-w-sm">09</div>
+          <div className=" bg-red-200  p-8  max-w-sm">10</div>
+
+
+
+
+        </div>
+      </Frame>
+
+
+      <Frame className="p-4 flex flex-col items-center justify-center">
+        <h2>フレックスレイアウト</h2>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+
+          <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex-1 aspect-video bg-blue-200 rounded-lg"></div>
+            <div className="flex-2">
+              <h3>Sample01</h3>
+              <p className="text-sm">
+                レスポンシブデザインとは、画面サイズが異なるデバイス（スマホ、タブレット、PCなど）でも、見やすくデザインを調整する手法です。
+              </p>
+            </div>
+          </div>
+
+          <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex-1 aspect-video bg-blue-200 rounded-lg"></div>
+            <div className="flex-2">
+              <h3>Sample02</h3>
+              <p className="text-sm">
+                画面サイズによって文字の大きさやレイアウトが変わるようにすることで、ユーザーに最適な見た目を提供できます。
+              </p>
+            </div>
+          </div>
+
+          <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex-1 aspect-video bg-blue-200 rounded-lg"></div>
+            <div className="flex-2">
+              <h3>Sample03</h3>
+              <p className="text-sm">
+                レスポンシブデザインとは、画面サイズが異なるデバイス（スマホ、タブレット、PCなど）でも、見やすくデザインを調整する手法です。
+              </p>
+            </div>
+          </div>
+
+          <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex-1 aspect-video bg-blue-200 rounded-lg"></div>
+            <div className="flex-2">
+              <h3>Sample04</h3>
+              <p className="text-sm">
+                画面サイズによって文字の大きさやレイアウトが変わるようにすることで、ユーザーに最適な見た目を提供できます。
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </Frame>
+
+
+      <Frame className="p-4 items-center justify-center">
+        <h2>レスポンシブ</h2>
+        <div className="flex flex-col md:flex-row gap-4 overflow-x-scroll">
+
+          <div className="min-w-sm max-w-lg">
+            <div className="aspect-video bg-blue-300 rounded-lg"></div>
+            <p>sample01 - あいうえおかきくけこさしすせそたちつてとなにぬねの</p>
+          </div>
+          <div className="min-w-sm max-w-lg">
+            <div className="aspect-video bg-blue-300 rounded-lg"></div>
+            <p>sample01 - あいうえおかきくけこさしすせそたちつてとなにぬねの</p>
+          </div>
+          <div className="min-w-sm max-w-lg">
+            <div className="aspect-video bg-blue-300 rounded-lg"></div>
+            <p>sample01 - あいうえおかきくけこさしすせそたちつてとなにぬねの</p>
+          </div>
+          <div className="min-w-sm max-w-lg">
+            <div className="aspect-video bg-blue-300 rounded-lg"></div>
+            <p>sample01 - あいうえおかきくけこさしすせそたちつてとなにぬねの</p>
+          </div>
+
+        </div>
+
+      </Frame>
 
 
 

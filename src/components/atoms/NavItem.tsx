@@ -18,12 +18,12 @@ export const NavItem = ({
 
     <Link
       href={href} className="
-      group flex  justify-between items-center rounded-full transition-all duration-300 whitespace-nowrap
-      bg-base hover:bg-acnt hover:text-main
+      flex justify-between items-center rounded-full transition-all duration-300
+      bg-main text-acnt hover:bg-acnt hover:text-main
     ">   
         
-      <Icon src={icon} color="base" className="bg-main"/>
-      <span className="text-xs font-medium  px-2">
+      <Icon src={icon} color="main" className="bg-acnt"/>
+      <span className="text-xs px-2">
         {label}
       </span>
 

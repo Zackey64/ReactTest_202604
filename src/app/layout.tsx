@@ -35,10 +35,10 @@ export default function RootLayout({
         <Header />
         
         <Navbar />
-
-        <main>
-          {children}
-        </main>
+        <div className="flex">
+          <div className="flex-none"><Sidebar/></div>
+          <main>{children}</main>
+        </div>
         
         <Footer />
       </body>

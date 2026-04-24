@@ -18,9 +18,9 @@ export const Icon = ({
 }: IconProps) => {
 
   const sizes = {
-    sm: "p-1 size-6 ",
-    md: "p-1.5 size-8",
-    lg: "p-2 size-10",
+    sm: "p-0.5 size-4 ",
+    md: "p-1   size-6",
+    lg: "p-1.5 size-8",
   };
 
   const colors = {

@@ -2,98 +2,44 @@
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+1+Code:wght@100..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+1+Code:wght@100..700&family=WDXL+Lubrifont+JP+N&display=swap');
 @import "tailwindcss";
-
 @plugin "@tailwindcss/typography";
+
 
 
 :root {
 
   /* ーーーー　通常　モード　ーーーー */
-  /* ベース */
-  --base: #ffffff;
-  --base-fill: #eeeeee;
-  --base-line: #cccccc;
-  /* メイン */
-  --main: #003366;
-  --main-fill: #ddeeff;
-  /* アクセント */
-  --accent: #ffcc33;
-  --accent-fill: #ffffcc;
-  /* 文字 */
-  --text: #444444;
-  --text-soft: #888888;
-  --text-hard: #000000;
-  --main-text: #ffffff;
-  --accent-text: #ffffff;
+  --base:   #eee;
+  --main:   #fff;
+  --accent: #08b;
+  --text:      #555;
+  --text-soft: #999;
+  --border:    #ccc;
   /* ーーーー　ダークモード　ーーーー */
-  /* ベース */
-  --dark-base: #111111;
-  --dark-base-fill: #222222;
-  --dark-base-line: #444444;
-  /* メイン */
-  --dark-main: #006633;
-  --dark-main-fill: #003311;
-  /* アクセント */
-  --dark-accent: #99cc00;
-  --dark-accent-fill: #113300;
-  /* 文字 */
-  --dark-text: #dddddd;
-  --dark-text-soft: #aaaaaa;
-  --dark-text-hard: #ffffff;
-  --dark-main-text: #ffffff;
-  --dark-accent-text: #ffffff;
+  --dark-base:   #111;
+  --dark-main:   #222;
+  --dark-accent: #3cf;
+  --dark-text:      #ddd;
+  --dark-text-soft: #999;
+  --dark-border:    #444;
   /* ーーーーーーーーーーーーーーーー */
-
-
-  
-
-
-
-
-
-
-
 
 }
 
 
 
-/* Tailwind のテーマとして登録 */
 @theme {
-
-
 
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 
-  /* ーーーー 色　ーーーー */
+  /* ーーーー 色 ーーーー */
   --color-base: var(--base);
-  --color-base-fill: var(--base-fill);
-  --color-base-line: var(--base-line);
   --color-main: var(--main);
-  --color-main-fill: var(--main-fill);
   --color-acnt: var(--accent);
-  --color-acnt-fill: var(--accent-fill);
-
   --color-text: var(--text);
   --color-text-soft: var(--text-soft);
-  --color-text-hard: var(--text-hard);
-  --color-main-text: var(--main-text);
-  --color-acnt-text: var(--accent-text);
-
-
-  --color-bg:   #ddeeff;
-  --color-text: #444444;
-  --color-text-soft: #888888;
-
-  --color-base: #ffffff;
-  --color-hover: #eeeeee;
-  --color-border: #dddddd;
-
-  --color-main: #003366;
-  --color-acnt: #ffcc33;
-
-
+  --color-border: var(--border);
 
 }
 
@@ -101,20 +47,13 @@
 @media (prefers-color-scheme:dark) {
   :root {
   
-  /* ーーーー 色　ーーーー */
+  /* ーーーー 色 ーーーー */
   --color-base: var(--dark-base);
-  --color-base-fill: var(--dark-base-fill);
-  --color-base-line: var(--dark-base-line);
   --color-main: var(--dark-main);
-  --color-main-fill: var(--dark-main-fill);
   --color-acnt: var(--dark-accent);
-  --color-acnt-fill: var(--dark-accent-fill);
- 
   --color-text: var(--dark-text);
   --color-text-soft: var(--dark-text-soft);
-  --color-text-hard: var(--dark-text-hard);
-  --color-main-text: var(--dark-main-text);
-  --color-acnt-text: var(--dark-accent-text);
+  --color-border: var(--dark-border);
 
   }
 }
@@ -133,63 +72,60 @@
 /* 標準タグのスタイル設定 */
 @layer base {
 
-
   html {
-    @apply bg-bg text-text border-border;
+    @apply bg-main text-text border-border;
     @apply font-base;
-        @apply max-w-7xl mx-auto;
+    @apply mx-auto;
   }
-
-  /* 全共通 */
   body {
     min-width: 320px;
     @apply antialiased min-h-screen;/* 文字を読みやすくする設定 */
   }
 
 
-
   /* 大枠 */
  header {
     @apply z-50 w-full;/* 最前面＋最大領域 */
-    @apply bg-main text-main-text;
+    @apply bg-main text-acnt;
+    @apply border-b border-border;
   }
   nav {
     @apply z-50 w-full;/* 最前面＋最大領域 */
-    @apply bg-base;
+    @apply bg-main text-text;
+    @apply border-b border-border;
+    @apply sticky top-0;
   }
   main {
-    @apply max-w-5xl mx-auto;
+    @apply w-full max-w-6xl flex flex-col px-2 md:px-8;
+    @apply bg-main text-text;
   }
   footer {
     @apply z-50 w-full;/* 最前面＋最大領域 */
-    @apply bg-main text-main-text;
+    @apply bg-main text-text;
+    @apply border-t border-border;
   }
-
 
 
     /* 小枠 */
   h1 {
-    @apply text-3xl font-bold;
+    @apply text-text text-3xl font-bold;
     @apply my-2;
   }
   h2 {
-    @apply text-2xl font-bold;
+    @apply text-text text-2xl font-bold;
     @apply my-2;
 
   }
   h3 {
-    @apply text-xl font-bold;
+    @apply text-text text-xl font-bold;
     @apply my-2;
 
   }
   p {
-    @apply text-lg font-normal;
+    @apply text-text text-lg font-normal;
     @apply leading-relaxed;
   }
 
-
-
-  
 
 
   img, video, canvas, svg {

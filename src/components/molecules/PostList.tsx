@@ -15,31 +15,27 @@ export default function PostList({ posts }: { posts: Post[] }) {
 
   return (
 
-    <div className="grid bg-base gap-4">
+    <div className="border-t border-border">
 
         {posts.map((post) => (
-        <article key={post.slug} className="w-full">
+        <article key={post.slug}>
         
-        <Link className="w-full" href={`/TechblogTest/${post.slug}`}>
-        
-        <div className="flex">
-            <time className="flex-none text-sm text-text-soft">
-                {post.date}
-            </time>
-            <div className="flex-1 ml-2 mt-2 border-t border-border">
+        <Link href={`/TechblogTest/${post.slug}`}>
+
+        <div className="py-4 flex border-b border-border">
+            
+            <div className="flex-none border border-border rounded-md overflow-hidden size-20">
+                {post.image && (
+                <SetImage src={post.image} alt="" aspectRatio="square" className=""/>
+                )}
             </div>
             
-        </div>
-        <h3 className="border-none">         
-            {post.title}
-        </h3>
-        <div className="flex">
             
-            {post.image && (
-                <SetImage src={post.image} alt="" aspectRatio="square" className="w-24 flex-none"/>
-            )}
-            
-            <div className="ml-2 w-full">
+            <div className="flex-1 ml-2">
+
+                <p className="m-0">         
+                    {post.title}
+                </p>
 
                 {post.description && (
                 <p className="mb-2 text-sm text-text-soft line-clamp-2">
@@ -58,15 +54,11 @@ export default function PostList({ posts }: { posts: Post[] }) {
                 </div>
                 )}
 
-                <div className="flex items-end justify-end text-sm font-medium text-main mt-2">
-                記事を読む
-                <svg className="ml-1 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-                </div>
-                
-
             </div>
+
+            <time className="flex-none text-sm text-text-soft">
+                {post.date}
+            </time>
 
         </div>
         

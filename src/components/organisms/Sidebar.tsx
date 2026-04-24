@@ -2,8 +2,8 @@ import { Frame } from "@/components/atoms/Frame";
 
 export const Sidebar = () => {
   return (
-    <Frame className="m-4">
-    <aside className="w-40  p-4 hidden md:block h-160">
+
+    <aside className="w-48 h-full p-4 hidden md:block bg-base border-r border-border">
         
             <ul className="space-y-4">
                 <li><a href="#" className="hover:text-blue-600">Dashboard</a></li>
@@ -12,6 +12,6 @@ export const Sidebar = () => {
         
       
     </aside>
-    </Frame>
+
   );
 }

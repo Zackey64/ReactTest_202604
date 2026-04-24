@@ -14,7 +14,7 @@ export const Frame = ({
 }: FrameProps) => {
 
   const types = {
-    base:       "bg-base border border-border",
+    base:       "bg-main border border-border",
     main:           "bg-main text-base",
     accent:         "bg-acnt text-base",
     base_outline:   "bg-base border border-border text-text",
