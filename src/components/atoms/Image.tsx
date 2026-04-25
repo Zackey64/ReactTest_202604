@@ -3,14 +3,14 @@ import { cn } from "@/lib/utils";
 
 interface ImageProps {
   src: string;
-  alt: string;
+  alt?: string;
   className?: string;
   aspectRatio?: 'video' | 'square' | 'auto';
 }
 
 export const SetImage: React.FC<ImageProps> = ({ 
   src, 
-  alt, 
+  alt="", 
   className, 
   aspectRatio = 'video' 
 }) => {
